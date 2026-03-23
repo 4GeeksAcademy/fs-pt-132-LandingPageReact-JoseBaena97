@@ -34,12 +34,14 @@ const Home = () => {
 	return (
 		<div>
 			<Navbar />
-			<Jumbo />
 			<div className='container py-4'>
-				<div className='row g-4'> {
-					GalleryData.map((el, i) => <div key={i} className="col-lg-3 col-md-6 col-sm-12">
-						<Card url={el.url} title={el.title} description={el.description} /> </div>)
-				}
+				<Jumbo />
+				<div className='row g-4'> 
+					{GalleryData.map((el, i) => (
+						<div key={i} className="col-12 col-md-6 col-lg-3">
+							<Card url={el.url} title={el.title} description={el.description} />
+						</div>
+					))}
 				</div>
 			</div>
 			<Footer />
